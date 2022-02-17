@@ -16,3 +16,17 @@ document.getElementById("final-calc").addEventListener('click', function () {
     let finalAmount = parseFloat(totalSpendtext.innerText);
     totalSpendtext.innerText = amountHave;
 })
+
+document.getElementById('saving-work').addEventListener('click', function () {
+    const incomeText = document.getElementById('income-calc');
+    const income = parseFloat(incomeText.value);
+    const mySaveText = document.getElementById('saving-input');
+    const mySave = parseFloat(mySaveText.value);
+    const savingField = (income / 100) * mySave;
+    const savingHaveText = document.getElementById('save-calc');
+    const savingHave = parseFloat(savingHaveText.innerText);
+    savingHaveText.innerText = savingField;
+    const finalBalanceText = document.getElementById('balace-calc');
+    const finalBalance = parseFloat(finalBalanceText.innerText);
+    finalBalanceText.innerText = income - savingField;
+})
