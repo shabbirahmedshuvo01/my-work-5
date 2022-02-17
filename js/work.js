@@ -15,8 +15,15 @@ document.getElementById("final-calc").addEventListener('click', function () {
     const totalSpendtext = document.getElementById('valid-amount');
     let finalAmount = parseFloat(totalSpendtext.innerText);
     totalSpendtext.innerText = amountHave;
-})
 
+    // variable setting 
+    if (income < spendAmount) {
+        alert('insufficient funds');
+    }
+
+
+})
+// savingField
 document.getElementById('saving-work').addEventListener('click', function () {
     const incomeText = document.getElementById('income-calc');
     const income = parseFloat(incomeText.value);
@@ -31,4 +38,7 @@ document.getElementById('saving-work').addEventListener('click', function () {
     const finalBalanceText = document.getElementById('balace-calc');
     const finalBalance = parseFloat(finalBalanceText.innerText);
     finalBalanceText.innerText = Math.abs(savingField - remain);
+    if (income < savingField) {
+        alert('give valid percentage');
+    }
 })
