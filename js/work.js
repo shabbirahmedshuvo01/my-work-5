@@ -26,7 +26,9 @@ document.getElementById('saving-work').addEventListener('click', function () {
     const savingHaveText = document.getElementById('save-calc');
     const savingHave = parseFloat(savingHaveText.innerText);
     savingHaveText.innerText = savingField;
+    const remainText = document.getElementById('valid-amount');
+    let remain = parseFloat(remainText.innerText);
     const finalBalanceText = document.getElementById('balace-calc');
     const finalBalance = parseFloat(finalBalanceText.innerText);
-    finalBalanceText.innerText = income - savingField;
+    finalBalanceText.innerText = Math.abs(savingField - remain);
 })
